@@ -1,0 +1,19 @@
+# Setup term for programs to be able to use it
+env:
+  TERM: alacritty
+
+window:
+  # Startup Mode (changes require restart)
+  startup_mode: Fullscreen
+
+font:
+    use_thin_strokes: true
+    
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+
+  # When set to `true`, selected text will be copied to the primary clipboard.
+  save_to_clipboard: true
+
+# Live config reload (changes require restart)
+live_config_reload: true

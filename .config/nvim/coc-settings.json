@@ -1,0 +1,9 @@
+{
+    "typescript.suggestionActions.enabled": true,
+    "typescript.suggest.enabled": false,
+    "typescript.validate.enable": false,
+    "javascript.suggest.enabled": true,
+    "javascript.validate.enable": false,
+    "coc.preferences.formatOnSaveFiletypes": ["rust", "prisma"],
+    "react-refactor.produceClass": false
+}
