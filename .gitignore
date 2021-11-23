@@ -1,0 +1,17 @@
+/*
+
+!.config/
+
+.config/*
+.config/nvim/*
+
+!.config/nvim/
+!.config/nvim/init.vim
+!.config/nvim/coc-settings.json
+!.config/nvim/plugin
+!.config/alacritty
+
+!.zshrc
+!.fzf.zsh
+!.tmux.conf
+!/.gitignore
