@@ -12,6 +12,5 @@
 !.config/alacritty
 
 !.zshrc
-!.fzf.zsh
 !.tmux.conf
 !/.gitignore
