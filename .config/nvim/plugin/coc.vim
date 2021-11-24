@@ -1,3 +1,4 @@
+let g:coc_global_extensions = ['coc-spell-checker', 'coc-html', 'coc-fzf-preview', 'coc-cssmodules', 'coc-tsserver', 'coc-css', 'coc-react-refactor']
 " Required for Coc to work
 au BufRead,BufNewFile *.js set filetype=javascript.jsx
 

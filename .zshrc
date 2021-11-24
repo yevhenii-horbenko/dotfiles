@@ -24,6 +24,7 @@ alias pg_start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.p
 alias pg_stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 alias dev="lerna bootstrap; lsof -ti:5006,5007 | xargs kill; npm run develop:debug"
 alias clear_cache="redis-cli keys 'cache:*' | xargs redis-cli del"
+alias bat='batcat'
 
 export TERM=xterm-256color
 
