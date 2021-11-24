@@ -14,3 +14,4 @@
 !.zshrc
 !.tmux.conf
 !/.gitignore
+.fzf.zsh
