@@ -3,7 +3,7 @@ call plug#begin()
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 " Navigation
-set wildignore+=*/node_modules/*,*/dist/*,*/public/*
+set wildignore+=*/node_modules/*,*/dist/*,*/public/*,*/.git/*
 " Basic setup
 set number
 set smartindent
@@ -30,6 +30,10 @@ set foldnestmax=10
 set nofoldenable
 set foldlevel=2
 
+" Permanent undo
+set undodir=~/.config/nvim/.vimdid
+set undofile
+
 " Disabling arrow keys
 noremap <Up> <NOP>
 noremap <Down> <NOP>
@@ -42,9 +46,24 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " Theme
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-let g:airline_theme='base16'
+Plug 'itchyny/lightline.vim'
+let g:lightline = {
+\ }
+let g:lightline = {
+    \ 'colorscheme': 'one',
+    \ 'component_function': {
+    \   'filename': 'LightlineFilename',
+    \ }
+\ }
+
+function! LightlineFilename()
+  let root = fnamemodify(get(b:, 'git_dir'), ':h')
+  let path = expand('%:p')
+  if path[:len(root)-1] ==# root
+    return path[len(root)+1:]
+  endif
+  return expand('%')
+endfunction
 
 set t_Co=256
 Plug 'flrnd/candid.vim'
@@ -126,6 +145,9 @@ Plug 'skywind3000/asyncrun.vim'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
+
+" Copilot
+Plug 'github/copilot.vim'
 
 " Show screen on start
 Plug 'mhinz/vim-startify'

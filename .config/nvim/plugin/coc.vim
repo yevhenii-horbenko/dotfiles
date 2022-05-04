@@ -1,6 +1,8 @@
-let g:coc_global_extensions = ['coc-spell-checker', 'coc-html', 'coc-fzf-preview', 'coc-cssmodules', 'coc-tsserver', 'coc-css', 'coc-react-refactor']
+let g:coc_global_extensions = ['coc-spell-checker', 'coc-html', 'coc-fzf-preview', 'coc-cssmodules', 'coc-tsserver', 'coc-css', 'coc-react-refactor', 'coc-rls']
 " Required for Coc to work
 au BufRead,BufNewFile *.js set filetype=javascript.jsx
+
+let g:fzf_preview_grep_cmd = 'rg --line-number --no-heading --color=never --hidden --glob "!.git/*"'
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
