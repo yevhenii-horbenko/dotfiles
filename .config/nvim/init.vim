@@ -91,7 +91,6 @@ Plug 'vim-scripts/matchit.zip'
 Plug 'pangloss/vim-javascript'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'maxmellon/vim-jsx-pretty'
-Plug 'rhysd/npm-debug-log.vim'
 Plug 'neovim/node-host',                  { 'do': 'npm install' }
 Plug 'cdata/vim-tagged-template'
 
@@ -165,6 +164,9 @@ Plug 'tpope/vim-surround'
 
 " Editor Config
 Plug 'editorconfig/editorconfig-vim'
+
+" Session management
+Plug 'tpope/vim-obsession'
 
 call plug#end()
 
