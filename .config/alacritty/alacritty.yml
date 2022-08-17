@@ -1,13 +1,27 @@
 # Setup term for programs to be able to use it
 env:
-  TERM: alacritty
+  TERM: xterm-256color
 
 window:
   # Startup Mode (changes require restart)
   startup_mode: Fullscreen
 
 font:
-    use_thin_strokes: true
+  size: 11.0
+  use_thin_strokes: true
+
+  normal:
+    family: Fira Code
+    style: Regular
+  bold:
+    family: Fira Code
+    style: Bold
+  italic:
+    family: Fira Code
+    style: Italic
+  bold_italic:
+    family: Fira Code
+    style: Bold Italic
     
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
