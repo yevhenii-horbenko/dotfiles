@@ -5,8 +5,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
   git
   docker
-  zsh-syntax-highlighting
   zsh-autosuggestions
+  zsh-syntax-highlighting
   zsh-better-npm-completion
 )
 
