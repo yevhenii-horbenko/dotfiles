@@ -1,0 +1,6 @@
+require('plugins')
+require('plugins.fzf')
+require('plugins.theme')
+require('plugins.statusline')
+require('plugins.autocomplete')
+require('plugins.syntax-highlight')
