@@ -1,0 +1,11 @@
+#!/bin/bash
+# update nvim config
+read -p "Are you sure you want to update nvim config? (y/n)" -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+  cd ~
+  rm -rf .cfg/\~/.config/nvim
+  mkdir -p .cfg/\~/.config/nvim
+  cp -R .config/nvim .cfg/\~/.config
+fi
