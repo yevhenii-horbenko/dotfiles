@@ -30,5 +30,5 @@ hi ALEWarningSign guifg=#F2C38F
 let g:ale_fix_on_save = 1
 
 " Use CTRL-k and CTRL-j to navigate errors
-nmap <C-k> <Plug>(ale_previous_wrap)
-nmap <C-j> <Plug>(ale_next_wrap)
+"nmap <C-k> <Plug>(ale_previous_wrap)
+"nmap <C-j> <Plug>(ale_next_wrap)

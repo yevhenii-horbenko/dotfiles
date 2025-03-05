@@ -1,3 +1,13 @@
-require("transparent").setup({
-  enable = true,
-})
+return {
+  {
+    "EdenEast/nightfox.nvim",
+    opts = {
+      transparent = true,
+    },
+    config = function ()
+      vim.cmd [[
+        colorscheme nightfox
+      ]]
+    end
+  },
+}

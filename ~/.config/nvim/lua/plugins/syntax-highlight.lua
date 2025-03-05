@@ -1,3 +1,11 @@
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "typescript", "tsx", "lua", "vim" },
+return {
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = { "typescript", "lua", "vim" },
+      highlight = { enable = true },
+      indent = { enable = true },
+      sync_install = false,
+    },
+  }
 }

@@ -4,11 +4,11 @@ filetype plugin on
 set wildignore+=*/node_modules/*,*/dist/*,*/public/*,*/.git/*
 set number
 set smartindent
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set clipboard=unnamed
-set completeopt-=preview
+set completeopt=menu,menuone,noselect
 set hlsearch
 set wildmenu
 set relativenumber
@@ -38,18 +38,14 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 " Easier navigation
 nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k <C-w>k
 nnoremap <C-l> <C-w>l
 
 Plug 'raimondi/delimitmate' " Closing brackets
-let g:delimitMate_expand_cr = 4
-let g:delimitMate_expand_space = 4
+let g:delimitMate_expand_cr = 2
+let g:delimitMate_expand_space = 2
 
-Plug 'airblade/vim-gitgutter'
-Plug 'scrooloose/nerdcommenter'
-Plug 'haya14busa/incsearch.vim' " Better search highlighting
-Plug 'kshenoy/vim-signature' " For highlighting marks
 Plug 'vim-scripts/matchit.zip' 
 
 " Navigation
@@ -67,52 +63,12 @@ nmap s <Plug>(easymotion-overwin-f2)
 " Turn on case-insensitive feature
 let g:EasyMotion_smartcase = 1
 
-" Project tree
-Plug 'scrooloose/nerdtree'
-nnoremap <Leader>f :NERDTreeToggle<Enter>
-nnoremap <silent> <Leader>v :NERDTreeFind<CR>
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
-let NERDTreeHijackNetrw = 0
-let NERDTreeShowHidden=1
-
-" Fuzzy Search
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
-Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-
-" GIT
-Plug 'tpope/vim-fugitive'
-
-" Eslint checking
-Plug 'w0rp/ale'
-
 " Async jobs
 Plug 'skywind3000/asyncrun.vim'
-
-" Copilot
-Plug 'github/copilot.vim'
-let g:copilot_ignore_node_version = 1
-
-" Show screen on start
-Plug 'mhinz/vim-startify'
-let g:startify_session_persistence = 0
 
 " Autosave
 Plug 'sjl/vitality.vim'
 au FocusLost * :wa
-
-" Wrapping text
-Plug 'tpope/vim-surround'
-
-" Editor Config
-Plug 'editorconfig/editorconfig-vim'
-
-" Session management
-Plug 'tpope/vim-obsession'
-
-" Theme
-Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
 call plug#end()
 
@@ -132,9 +88,9 @@ if exists('+termguicolors')
 endif
 set t_Co=256
 set background=dark
-colorscheme onehalfdark
 
 " Section: Local-Machine Config
+autocmd BufWritePre *.go lua vim.lsp.buf.format()
 
 if filereadable($DOTFILES . "/nvim/init.local.vim")
   source $DOTFILES/nvim/init.local.vim
